@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>今天中午吃啥子？</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./dist/jquery.slotmachine.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./dist/slotmachine.js"></script>
+    <script src="./dist/jquery.slotmachine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <!-- Slot machine example -->
+    <div id="casino" style="padding-top:50px;">
+      <div class="content">
+        <h1>今天中午吃啥子？</h1>
+
+        <div>
+          <div id="casino1" class="slotMachine" style="margin-left:-63px; width:100%;">
+            <div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>一碗情</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>羊汤烩面</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>打卤面</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>阿香水饺</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>小万食堂</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>顺兴斋</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>360</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>五十一刻</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>炸酱面</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>焖面</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>南门羊汤</font></div>
+			<div class="slot slot1" style="background-image:none; line-height:90px"><font size=15>再来一次</font></div>
+          </div>
+
+          <div class="btn-group btn-group-justified" role="group">
+            <button id="casinoShuffle" type="button" class="btn btn-primary btn-lg">Shuffle!</button>
+            <button id="casinoStop" type="button" class="btn btn-primary btn-lg">Stop!</button>
+          </div>
+        </div>
+      </div>
+
+    <script id="codeScript5">
+		let count = 0;
+		const btnShuffle = document.querySelector('#casinoShuffle');
+		const btnStop = document.querySelector('#casinoStop');
+		const casino1 = document.querySelector('#casino1');
+
+		const mCasino1 = new SlotMachine(casino1, {
+		  active: 0,
+		  delay: 500
+		});
+    </script>
+	
+    <script id="codeScript6">
+		btnShuffle.addEventListener('click', () => {
+			mCasino1.shuffle(9999);
+		});
+
+		btnStop.addEventListener('click', () => {
+			mCasino1.stop();
+		});
+    </script>
+
+  </body>
+</html>
